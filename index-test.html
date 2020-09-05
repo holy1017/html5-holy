@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Holy</title>
+        
+        <meta charset=“utf-8”>
+
+        <meta name="description" content="연습용">
+        <meta name="keyword" content="html,html5">
+        <meta name="author" content="holy">
+        
+
+        <!-- <base  href="https://github.com/holy1017/html5-holy"> -->
+
+        <!-- 새창 -->
+        <!-- <base target="_blank"> -->
+
+        <link rel="stylesheet" href="css.css">
+
+        <style>
+            
+        </style>
+
+        <script>
+            function start(){
+                console.log("start ");
+            }
+        </script>
+    </head>
+    <body onload="start()">
+        <header>
+        헤더 테스트
+        </header>
+
+        <!-- main 한번만 사용 가능 -->
+        <main>          
+            <section>
+                <canvas id="canvas7" width="400" height="400">
+                </canvas>
+                <script>
+                    // Set the fill style and draw a rectangle
+                    ctx.fillStyle = gradient;
+                    ctx.fillRect(200, 50, 200, 200);
+
+                    var canvas = document.getElementById('canvas7');
+                    var ctx = canvas.getContext('2d');
+
+                    var img = new Image();
+                    img.src = 'https://mdn.mozillademos.org/files/222/Canvas_createpattern.png';
+                    img.onload = function() {
+                    var pattern = ctx.createPattern(img, 'repeat');
+                    ctx.fillStyle = pattern;
+                    ctx.fillRect(0, 0, 300, 300);
+                    };
+                </script>
+            </section>
+            <section>
+                <canvas id="canvas7" width="400" height="400">
+                </canvas>
+                <script>
+                    var c=document.getElementById("canvas7");
+                    console.log(c);
+                    var d=c.getContext("2d");
+                    console.log(d);
+
+                    d.beginPath()
+                    d.moveTo(50,50)                    
+                    d.lineTo(100,50)                    
+                    d.lineTo(100,100)                    
+                    //d.closePath() 
+                    d.lineWidth=10;
+                    d.lineJoin="bevel"
+                    d.lineCap="butt"
+                    d.stroke(); 
+
+                    d.beginPath()
+                    d.moveTo(150,50)                    
+                    d.lineTo(200,50)                    
+                    d.lineTo(200,100)                    
+                    //d.closePath() 
+                    d.lineWidth=10;
+                    d.lineJoin="miter"
+                    d.lineCap="square"
+                    d.stroke(); 
+
+                    d.beginPath()
+                    d.moveTo(250,50)                    
+                    d.lineTo(300,50)                    
+                    d.lineTo(300,100)                    
+                    //d.closePath() 
+                    d.lineWidth=10;
+                    d.lineJoin="round"
+                    d.lineCap="round"
+                    d.stroke(); 
+
+                    d.beginPath()
+                    d.moveTo(50,150)                                        
+                    d.lineTo(300,150)                   
+                    d.setLineDash([10,5])                    
+                    d.lineWidth=1;
+                    d.stroke(); 
+
+                    d.beginPath()
+                    d.moveTo(50,200)                                        
+                    d.lineTo(300,200)                   
+                    d.setLineDash([10])                    
+                    d.lineWidth=1;
+                    d.stroke(); 
+
+                    d.beginPath()
+                    d.moveTo(50,250)                                        
+                    d.lineTo(300,250)                   
+                    d.setLineDash([10,7,5])                    
+                    d.lineWidth=1;
+                    d.stroke(); 
+                    
+                    d.beginPath()
+                    d.moveTo(50,300)                                        
+                    d.lineTo(300,300)                   
+                    d.setLineDash([11,9,7,5,3])                    
+                    d.lineWidth=1;
+                    d.stroke(); 
+                                        
+                    d.beginPath()
+                    d.rect(75,75,100,100)              
+                    d.lineTo(50,100)
+                    d.setLineDash([11,9,7,5,3])   
+                    d.globalAlpha=0.5
+                    d.lineWidth=10;
+                    d.stroke(); 
+                    d.fillStyle="#D8E492"
+                    d.fill()
+
+                    d.beginPath()
+                    d.rect(175,175,100,100)                                  
+                    d.globalAlpha=0.5
+                    d.stroke(); 
+                    var e=d.createLinearGradient(200,200,250,250)
+                    e.addColorStop(0.0,"#951357")
+                    e.addColorStop(1.0,"#159753")
+                    d.fillStyle=e
+                    d.fill()
+                    d.fillRect(125,200,100,150)
+
+
+                    var canvas = document.getElementById('canvas7');
+                    var ctx = canvas.getContext('2d');
+
+                    // Create a radial gradient
+                    // The inner circle is at x=110, y=90, with radius=30
+                    // The outer circle is at x=100, y=100, with radius=70
+                    var gradient = ctx.createRadialGradient(300,100,30, 300,130,70);
+
+                    // Add three color stops
+                    gradient.addColorStop(0, 'pink');
+                    gradient.addColorStop(0.4, "red");
+                    gradient.addColorStop(.9, 'white');
+                    gradient.addColorStop(1, 'green');
+
+                </script>
+            </section>  
+
+            <section>
+                <canvas id="canvas6" width="400" height="400">
+                </canvas>
+                <script>
+                    var c=document.getElementById("canvas6");
+                    console.log(c);
+                    var d=c.getContext("2d");
+                    console.log(d);
+
+                    d.moveTo(100,100)                    
+                    d.bezierCurveTo(100,300,300,300,300,100)                    
+                    //d.lineTo(300,100)                    
+                    
+                    d.closePath() 
+                    d.fillStyle="rgb(100,200,200)" ;
+                    d.fill();   // 실제로 채우기 스타일로 그림
+                    d.lineWidth=3;
+                    d.stroke(); 
+                </script>
+            </section>  
+            <section>
+                <canvas id="canvas5" width="400" height="400">
+                </canvas>
+                <script>
+                    var c=document.getElementById("canvas5");
+                    console.log(c);
+                    var d=c.getContext("2d");
+                    console.log(d);
+
+                    d.moveTo(100,100)                    
+                    d.quadraticCurveTo(200,300,300,100)                    
+                    //d.lineTo(300,100)                    
+                    
+                    d.closePath() 
+                    d.fillStyle="rgb(100,200,200)" ;
+                    d.fill();   // 실제로 채우기 스타일로 그림
+                    d.lineWidth=3;
+                    d.stroke(); 
+                </script>
+            </section>
+            <section>
+                <canvas id="canvas4" width="400" height="400">
+                </canvas>
+                <script>
+                    var c=document.getElementById("canvas4");
+                    console.log(c);
+                    var d=c.getContext("2d");
+                    console.log(d);
+
+                    d.moveTo(100,100)
+                    d.arcTo(200,300,300,100,75)
+                    d.lineTo(300,100)
+                    d.closePath() 
+                    d.fillStyle="rgb(100,100,200)" ;
+                    d.fill();   // 실제로 채우기 스타일로 그림
+                    d.stroke(); 
+                </script>
+            </section>
+            <section>
+                <canvas id="canvas2" width="300" height="300">
+                    드로잉 크기 기본값 300*150
+                </canvas>
+                <!-- 스타일값을 지정해도 드로잉 크기가 바뀌진 않음 -->
+                <style>
+                    /* canvas#canvas2 {
+                        width: 500px;
+                        height: 500px;
+                        border: 1px solid red;
+                    } */
+                </style>
+                <script>
+                    var c=document.getElementById("canvas2");
+                    console.log(c);
+                    var d=c.getContext("2d");
+                    console.log(d);
+
+                    d.moveTo(10,10);//기준 이동
+                    d.lineTo(100,50)
+                    d.lineTo(50,100)
+                    d.fillStyle="green";
+                    d.fill();   // 실제로 채우기 스타일로 그림
+                    d.strokeStyle="blue";
+                    d.stroke(); // 실제로 선 스타일로 그림
+
+                    d.beginPath(); // 초기화
+                    d.moveTo(10,110);//기준 이동
+                    d.lineTo(100,150)
+                    d.lineTo(50,200)
+                    d.closePath() // 자동 닫기
+                    d.stroke(); // 실제로 선 스타일로 그림
+                    d.lineWidth=10; // fill과는 상관 없음
+                    d.fill();   // 실제로 채우기 스타일로 그림
+
+                    d.beginPath();
+                    d.moveTo(150,0);//기준 이동
+                    d.arc(150,150,100,1,(180-45)*Math.PI/180,true);
+                    d.fillStyle="#654321";
+                    d.fill();
+                    //c.width=300;
+                    //c.hight=300;
+                    // c.style.backgroundColor="#987654";                
+                    // d.strokeStyle="blue";
+                    // d.fillStyle="green";
+                    // d.strokeRect(50,50,100,100);
+                    // d.fillRect(150,150,100,100);
+                    // d.clearRect(100,100,100,100);
+                </script>                
+            </section>
+
+            <section>
+                <canvas id="canvas3" width="200" height="200">
+                    드로잉 크기 기본값 300*150
+                </canvas>
+                <script>
+                    var c=document.getElementById("canvas3");
+                    var d=c.getContext("2d");
+
+                    d.moveTo(100,0);//기준 이동
+                    d.lineTo(200,200)
+                    d.lineTo(0,100)
+                    d.lineTo(200,00)
+                    d.lineTo(100,200)
+                    d.lineTo(00,00)
+                    d.lineTo(200,100)
+                    d.lineTo(00,200)
+                    d.fillStyle="green";
+                    d.fill();   // 실제로 채우기 스타일로 그림
+                    d.strokeStyle="blue";
+                    d.lineWidth=3;
+                    d.closePath();
+                    d.stroke(); // 실제로 선 스타일로 그림
+
+                </script>                
+            </section>
+
+            <section>
+                <canvas id="canvas" width="400" height="500">
+                    드로잉 크기 기본값 300*150
+                </canvas>
+                <!-- 스타일값을 지정해도 드로잉 크기가 바뀌진 않음 -->
+                <style>
+                    canvas#canvas {
+                        width: 500px;
+                        height: 300px;
+                        border: 1px solid red;
+                    }
+                </style>
+                <script>
+                    var c=document.getElementById("canvas");
+                    console.log(c);
+                    var d=c.getContext("2d");
+                    console.log(d);
+                    c.width=300;
+                    c.hight=300;
+                    c.style.backgroundColor="#123456";                
+                    d.lineWidth=10;
+                    d.strokeStyle="blue";
+                    d.fillStyle="green";
+                    d.strokeRect(50,50,100,100);
+                    d.fillRect(150,150,100,100);
+                    d.clearRect(100,100,100,100);
+                </script>
+            </section>
+            <section>
+                <h1>섹션</h1>
+                <article>아티클</article>
+                <section>
+                    <h1>섹션</h1>
+                    <article>아티클</article>
+                </section>
+                <section>
+                    <h1>섹션</h1>
+                    <article>아티클</article>
+                </section>
+                <h1>섹션</h1>
+                <section>
+                    <h1>섹션</h1>
+                    <article>
+                        <p>아티클</p>
+                        <p><strong>strong</strong></p>
+                        <p><mark>mark</mark></p>
+                        <p><time>23:00</time></p>
+                        <p><time datetime="2017-10-10">2017 year</time></p>
+                        <p><meter max=100 value="36"></meter></p>
+                        <p><meter min="50" max=100 value="60"></meter></p>
+                        <p><meter value="0.5"></meter></p>
+                        
+                        <!-- progress -->
+                        <p><progress value="8" max="100">progress</progress></p>
+                        <script>
+                            var x = document.getElementsByTagName("progress");
+                            var i;
+                            console.log(x);
+                            console.log(x[0]);
+                            console.log(x.item(0));                        
+                            var si = setInterval(function() {
+                                //console.log("setInterval:" + x.item(0).value + "," + x.item(0).max);
+                                for (i = 0; i < x.length; i++) {
+                                    //x.item(i).value ++;
+                                    x[i].value ++;
+                                    if (x.item(i).value >= x.item(i).max) {
+                                        x.item(i).value=0;
+                                    }
+                                }
+                            }, 50);
+                        </script>
+                    
+                        <!-- rp 안먹히네 -->
+                        <p><ruby>東<rt><rp>[</rp>동<rp>]</rp></rt></ruby></p>
+                        <p><ruby>東<rt>동</rt></ruby></p>
+                    
+                        <!-- <wbr> 중바꿈 허용 위치 -->
+                        <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<wbr>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                        <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                    </article>
+                </section>
+                <section>
+                    <figure>
+                        <p>피규어?</p>
+                        <img src="https://i.imgur.com/TCBSkam.jpg" width="100">
+                        <img src="https://i.imgur.com/miEkJSl.jpg" width="100">
+                        <figcaption>캡션</figcaption>
+                    </figure>
+                </section>
+                <section>
+                    <details >
+                        <summary>summary</summary>
+                        <p>test</p>
+                    </details>
+                    <details open>
+                        <summary>summary</summary>
+                        <p>test</p>
+                    </details>
+                    <p><label>test<input type="text" name="test"></label></p>
+                    <p><label for="test">test</label><input id="test" type="text" name="test"></p>
+                </section>
+
+                <h2>섹션</h2>
+                <hgroup>    
+                    <h1>섹션</h1>
+                    <h3>섹션</h3>
+                </hgroup>
+            </section>
+        </main>
+        
+        <aside>
+            <p>사이드</p>
+        </aside>
+
+        
+        <nav>
+            <p>메뉴</p>
+            <ol>
+                <li><a href="">링크</a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ol>
+        </nav>`
+
+        <footer>푸터</footer>
+    </body>
+</html>
+            
+            
